@@ -1,0 +1,14 @@
+services:
+  comedor:
+    build: .
+    container_name: comedor-service
+    restart: unless-stopped
+    env_file:
+      - .env
+    ports:
+      - "8090:8080"
+    volumes:
+      - comedor_data:/data
+
+volumes:
+  comedor_data:
